@@ -1,8 +1,10 @@
-public class Solution {
+import java.util.*;
 
-    public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        Scanner in = new Scanner(System.in);
+public class NextTopologicalOrdering {
+
+    private static Scanner in;
+	public static void main(String[] args) {
+        in = new Scanner(System.in);
         int n = in.nextInt(), m = in.nextInt();
 
         ArrayList<Integer> g[] = new ArrayList[n + 1];
@@ -74,9 +76,5 @@ public class Solution {
             }
             System.out.println();
         }
-
-    }
-    public static int[] nextTopologicalOrdering(int n, int[][] edge, int[] order){
-      
     }
 }

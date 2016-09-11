@@ -30,21 +30,14 @@ public class Solution {
      * @return: an integer
      */
     public int maxArea(int[] heights) {
-    	if (heights == null || heights.length == 0) {
-    		return 0;
-    	}
-    	int left = 0;
-    	int right = heights.length - 1;
-    	int maxWater = Integer.MIN_VALUE;
-    	while (left < right) {
-    		maxWater = Math.max(maxWater, (right-left) * (heights[left] < heights[right] ? heights[left] : heights[right]));
-    		if (heights[left] < heights[right]) {
-    			left++;
-    		} else {
-    			right--;
-    		}
-    	}
-    	return maxWater;
+        // write your code here
+        int start = 0, end = heights.length - 1, max = 0;
+        while(start < end){
+            max = Math.max(max,(end - start) * Math.min(heights[end], heights[start]));
+            if(heights[start] < heights[end]) start++;
+            else end--;
+        }
+        return max;
     }
 }
 

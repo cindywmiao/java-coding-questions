@@ -84,6 +84,24 @@ class Solution {
     }
 };
 
+class Solution {
+    //param k : description of k
+    //param numbers : array of numbers
+    //return: description of return
+    public int kthLargestElement(int k, ArrayList<Integer> nums) {
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+   
+        for(int n : nums){
+            pq.offer(n);
+            if(pq.size() > k) pq.poll();
+        }
+        
+        while(pq.size()!=k) pq.poll();
+        return pq.poll();
+    }
+};
+
+
 
 
 ```
