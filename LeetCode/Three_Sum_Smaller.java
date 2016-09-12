@@ -1,4 +1,4 @@
-一般的O(n3)肯定不行。在此基础上优化。
+/*一般的O(n3)肯定不行。在此基础上优化。
 发现j,k满足条件时候，(k - j)就是所有 sum <target的情况了。
 而一旦>target, 又因为j不能后退，只能k--，那么问题就被锁定了. 这样可以做到O(n2)
 ```
@@ -33,7 +33,9 @@ OR, if three-add-up >= target, since j can only increase, we do k-- to make the 
 Note:
 Don't forget to sort, otherwise the sequence/order is unpredictable
 */
-public class Solution {
+
+import java.util.*;
+public class Three_Sum_Smaller {
     public int threeSumSmaller(int[] nums, int target) {
         if (nums == null || nums.length <= 2) {
         	return 0;
@@ -55,4 +57,3 @@ public class Solution {
         return rst;
     }
 }
-```
